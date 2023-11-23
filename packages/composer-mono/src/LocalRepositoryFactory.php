@@ -53,7 +53,8 @@ class LocalRepositoryFactory
                 $packageSourceDir = $package === $rootPackage ? $this->baseDir : $composer->getInstallationManager()->getInstallPath($package);
                 $packageInfo['dist'] = [
                     'type' => 'path',
-                    'url' => $fileSystem->findShortestPath($appsDir, $packageSourceDir, true),
+                    // relative dirs here are treated as relative to the *project composer.json file*
+                    'url' => $packageSourceDir,
                     'reference' => $package->getInstallationSource() === 'source' ? $package->getSourceReference() : $package->getDistReference(),
                 ];
             }
