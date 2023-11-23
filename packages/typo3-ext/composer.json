@@ -1,0 +1,23 @@
+{
+  "name": "andreaswolf/test-extension",
+  "description": "Test extension for composerized TYPO3 test systems",
+  "type": "typo3-cms-extension",
+  "require": {
+    "typo3/testing-framework": "^8.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "AndreasWolf\\TestExtension\\": "Classes"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "AndreasWolf\\TestExtension\\Tests\\": "Tests"
+    }
+  },
+  "extra": {
+    "typo3/cms": {
+      "extension-key": "test_extension"
+    }
+  }
+}

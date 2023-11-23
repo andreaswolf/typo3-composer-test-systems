@@ -1,0 +1,24 @@
+{
+  "type": "project",
+  "require": {
+    "typo3/cms-core": "^12.4",
+    "typo3/cms-backend": "^12.4",
+    "typo3/cms-frontend": "^12.4",
+    "typo3/cms-extbase": "^12.4",
+    "typo3/cms-install": "^12.4",
+    "typo3/cms-fluid": "^12.4"
+  },
+  "config": {
+    "allow-plugins": {
+      "typo3/class-alias-loader": true,
+      "typo3/cms-composer-installers": true
+    }
+  },
+  "repositories": {
+    "local": {
+      "type": "composer",
+      "url": "../../../../../.mono/"
+    },
+    "packagist.org": false
+  }
+}
