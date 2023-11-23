@@ -1,0 +1,58 @@
+{
+	"name": "andreaswolf/typo3-composer-test-systems",
+	"description" : "PoC for Composer-based test systems in TYPO3",
+	"license": "GPL-2.0-or-later",
+	"type": "project",
+	"repositories": {
+		"local": {
+			"type": "path",
+			"url": "./packages/*"
+		}
+	},
+	"config": {
+		"allow-plugins": {
+			"typo3/class-alias-loader": true,
+			"typo3/cms-composer-installers": true,
+			"helhum/composer-mono": true
+		},
+		"platform": {
+			"php": "8.1.1"
+		},
+		"sort-packages": true
+	},
+	"require": {
+		"andreaswolf/test-extension": "@dev",
+		"helhum/composer-mono": "@dev",
+		"typo3/cms-backend": "^12.4.0",
+		"typo3/cms-belog": "^12.4.0",
+		"typo3/cms-beuser": "^12.4.0",
+		"typo3/cms-core": "^12.4.0",
+		"typo3/cms-dashboard": "^12.4.0",
+		"typo3/cms-extbase": "^12.4.0",
+		"typo3/cms-extensionmanager": "^12.4.0",
+		"typo3/cms-felogin": "^12.4.0",
+		"typo3/cms-filelist": "^12.4.0",
+		"typo3/cms-fluid": "^12.4.0",
+		"typo3/cms-fluid-styled-content": "^12.4.0",
+		"typo3/cms-form": "^12.4.0",
+		"typo3/cms-frontend": "^12.4.0",
+		"typo3/cms-impexp": "^12.4.0",
+		"typo3/cms-info": "^12.4.0",
+		"typo3/cms-install": "^12.4.0",
+		"typo3/cms-reactions": "^12.4.0",
+		"typo3/cms-rte-ckeditor": "^12.4.0",
+		"typo3/cms-seo": "^12.4.0",
+		"typo3/cms-setup": "^12.4.0",
+		"typo3/cms-sys-note": "^12.4.0",
+		"typo3/cms-t3editor": "^12.4.0",
+		"typo3/cms-tstemplate": "^12.4.0",
+		"typo3/cms-viewpage": "^12.4.0",
+		"typo3/cms-webhooks": "^12.4.0"
+	},
+	"require-dev": {
+		"composer/composer": "^2.6"
+	},
+	"scripts": {
+		"test:php:functional": "phpunit -c Build/FunctionalTests.xml"
+	}
+}
