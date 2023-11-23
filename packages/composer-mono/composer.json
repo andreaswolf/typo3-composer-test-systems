@@ -1,0 +1,31 @@
+{
+    "name": "helhum/composer-mono",
+    "type": "composer-plugin",
+    "description": "Composer mono repos like a breeze",
+    "homepage": "https://github.com/helhum/composer-mono",
+    "license": [
+        "GPL-2.0-or-later"
+    ],
+    "authors": [
+        {
+            "name": "Helmut Hummel",
+            "email": "typo3@helhum.io",
+            "role": "Developer"
+        }
+    ],
+    "extra": {
+        "class": "Helhum\\ComposerMono\\MonoPlugin"
+    },
+    "autoload": {
+        "psr-4": {
+            "Helhum\\ComposerMono\\": "src/"
+        }
+    },
+    "require": {
+        "composer": "^2.6",
+        "composer-plugin-api": "^2.1.0"
+    },
+    "require-dev": {
+        "composer/composer": "^2.6"
+    }
+}
