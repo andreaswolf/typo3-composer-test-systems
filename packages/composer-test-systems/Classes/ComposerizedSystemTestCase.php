@@ -1,6 +1,6 @@
 <?php
 
-namespace AndreasWolf\TestExtension;
+namespace AndreasWolf\ComposerTestSystems;
 
 use Psr\Container\ContainerInterface;
 use TYPO3\CMS\Core\Utility\GeneralUtility;

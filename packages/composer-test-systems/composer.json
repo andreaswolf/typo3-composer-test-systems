@@ -1,0 +1,14 @@
+{
+  "name": "andreaswolf/typo3-composer-test-systems",
+  "type": "library",
+  "require": {
+    "symfony/filesystem": "^5.4 || ^6.4 || ^7.0",
+    "thecodingmachine/safe": "^2.5",
+    "typo3/testing-framework": "^8.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "AndreasWolf\\ComposerTestSystems\\": "Classes"
+    }
+  }
+}

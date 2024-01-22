@@ -3,9 +3,7 @@
   "description": "Test extension for composerized TYPO3 test systems",
   "type": "typo3-cms-extension",
   "require": {
-    "symfony/filesystem": "^5.4 || ^6.4 || ^7.0",
-    "thecodingmachine/safe": "^2.5",
-    "typo3/testing-framework": "^8.0"
+    "andreaswolf/typo3-composer-test-systems": "@dev"
   },
   "autoload": {
     "psr-4": {

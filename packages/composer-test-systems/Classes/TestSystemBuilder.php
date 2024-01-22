@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace AndreasWolf\TestExtension;
+namespace AndreasWolf\ComposerTestSystems;
 
 use Symfony\Component\Filesystem\Path;
 use Symfony\Component\Process\Process;

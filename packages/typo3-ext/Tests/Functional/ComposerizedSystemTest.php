@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace AndreasWolf\Typo3Extension\Tests\Functional;
 
-use AndreasWolf\TestExtension\ComposerizedSystemTestCase;
+use AndreasWolf\ComposerTestSystems\ComposerizedSystemTestCase;
 use TYPO3\CMS\Core\Package\Package;
 use TYPO3\CMS\Core\Package\PackageManager;
 
