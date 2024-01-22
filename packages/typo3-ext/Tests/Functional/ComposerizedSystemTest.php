@@ -79,8 +79,12 @@ final class ComposerizedSystemTest extends FunctionalTestCase
             }
 
             if ($this->composerFile) {
-                $testSystemBuilder->copyComposerJsonFileToTestSystem($this->composerFile);
+                // this is special setup code for Composer-based systems
+                $testSystemBuilder->placeAdjustedComposerJsonFileInTestSystem($this->composerFile);
+                $testSystemBuilder->performComposerInstall();
             } else {
+                // this branch is copied verbatim from the parent method
+
                 $defaultCoreExtensionsToLoad = [
                     'core',
                     'backend',
@@ -98,6 +102,7 @@ final class ComposerizedSystemTest extends FunctionalTestCase
                 $testbase->linkTestExtensionsToInstance($this->instancePath, $this->testExtensionsToLoad);
                 $testbase->linkFrameworkExtensionsToInstance($this->instancePath, $frameworkExtension);
             }
+            // the rest of the method is copied from the base method
 
             $testbase->linkPathsInTestInstance($this->instancePath, $this->pathsToLinkInTestInstance);
             $testbase->providePathsInTestInstance($this->instancePath, $this->pathsToProvideInTestInstance);

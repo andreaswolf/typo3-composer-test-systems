@@ -13,12 +13,5 @@
       "typo3/class-alias-loader": true,
       "typo3/cms-composer-installers": true
     }
-  },
-  "repositories": {
-    "local": {
-      "type": "composer",
-      "url": "../../../../../.mono/"
-    },
-    "packagist.org": false
   }
 }
