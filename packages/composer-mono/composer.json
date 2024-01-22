@@ -14,7 +14,8 @@
         }
     ],
     "extra": {
-        "class": "Helhum\\ComposerMono\\MonoPlugin"
+        "class": "Helhum\\ComposerMono\\MonoPlugin",
+        "plugin-modifies-downloads": true
     },
     "autoload": {
         "psr-4": {

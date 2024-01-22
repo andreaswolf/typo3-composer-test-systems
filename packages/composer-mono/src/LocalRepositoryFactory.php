@@ -12,15 +12,7 @@ use Composer\Util\Filesystem;
 
 class LocalRepositoryFactory
 {
-    /**
-     * @var string
-     */
-    private $baseDir;
-
-    /**
-     * @var array
-     */
-    private $appsComposerBackup = [];
+    private string $baseDir;
 
     public function __construct(Composer $composer)
     {
@@ -54,6 +46,8 @@ class LocalRepositoryFactory
                 $packageInfo['dist'] = [
                     'type' => 'path',
                     // relative dirs here are treated as relative to the *project composer.json file*
+                    // => this will not work when installing in a different place in the directory hierarchy, thus we
+                    // stick to absolute paths here
                     'url' => $packageSourceDir,
                     'reference' => $package->getInstallationSource() === 'source' ? $package->getSourceReference() : $package->getDistReference(),
                 ];

@@ -12,9 +12,12 @@ use function \Safe\file_get_contents;
 
 class TestSystemBuilder
 {
-    public function __construct(private readonly string $instancePath, private readonly Testbase $testbase)
-    {
-    }
+    public function __construct(
+        private readonly string $instancePath,
+        private readonly string $composerRootDir,
+        private readonly Testbase $testbase
+    )
+    {}
 
     public function placeAdjustedComposerJsonFileInTestSystem(string $composerJsonFilePath): void
     {
@@ -30,7 +33,8 @@ class TestSystemBuilder
     {
         $process = new Process(
             ['composer', 'install', '--no-dev'],
-            $this->instancePath
+            $this->instancePath,
+            ['COMPOSER_ROOT_DIR' => $this->composerRootDir]
         );
         $returnCode = $process->run();
 

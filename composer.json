@@ -50,7 +50,8 @@
 		"typo3/cms-webhooks": "^12.4.0"
 	},
 	"require-dev": {
-		"composer/composer": "^2.6"
+		"composer/composer": "^2.6",
+		"typo3/testing-framework": "^8.0"
 	},
 	"scripts": {
 		"test:php:functional": "phpunit -c Build/FunctionalTests.xml"
