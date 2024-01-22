@@ -50,7 +50,11 @@ abstract class ComposerizedSystemTestCase extends FunctionalTestCase
         $dbPathSqlite = dirname($this->instancePath) . '/functional-sqlite-dbs/test_' . $this->identifier . '.sqlite';
         $dbPathSqliteEmpty = dirname($this->instancePath) . '/functional-sqlite-dbs/test_' . $this->identifier . '.empty.sqlite';
 
-        $testSystemBuilder = new TestSystemBuilder($this->instancePath, $testbase);
+        $composerDir = dirname(ORIGINAL_ROOT);
+        if (!file_exists($composerDir . '/composer.json')) {
+            throw new \RuntimeException('Could not find composer.json in ' . $composerDir, 1705935015);
+        }
+        $testSystemBuilder = new TestSystemBuilder($this->instancePath, $composerDir, $testbase);
 
         if (!$this->isFirstTest) {
             // Reusing an existing instance. This typically happens for the second, third, ... test

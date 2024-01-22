@@ -3,12 +3,12 @@ declare(strict_types=1);
 
 namespace AndreasWolf\TestExtension;
 
+use Symfony\Component\Filesystem\Path;
 use Symfony\Component\Process\Process;
 use TYPO3\TestingFramework\Core\Testbase;
-
-use function \Safe\json_decode;
-use function \Safe\json_encode;
-use function \Safe\file_get_contents;
+use function Safe\file_get_contents;
+use function Safe\json_decode;
+use function Safe\json_encode;
 
 class TestSystemBuilder
 {
@@ -53,11 +53,10 @@ class TestSystemBuilder
     {
         $testSystemComposerManifest = json_decode(file_get_contents($sourceFile), true);
 
-        // TODO get path relative to Composer JSON file
-        $repositoryPath = '../../../../../.mono/';
+        $relativeRepositoryPath = Path::makeRelative($this->composerRootDir . '/.mono/', $this->instancePath);
         $testSystemComposerManifest['repositories']['mono'] = [
             'type' => 'composer',
-            'url' => $repositoryPath
+            'url' => $relativeRepositoryPath
         ];
         $testSystemComposerManifest['repositories']['packagist.org'] = false;
         $composerManifestJson = json_encode($testSystemComposerManifest, \JSON_PRETTY_PRINT | \JSON_UNESCAPED_SLASHES);
