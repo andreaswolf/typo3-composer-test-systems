@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace AndreasWolf\Typo3Extension\Tests\Functional;
 
+use AndreasWolf\TestExtension\ComposerizedTestbase;
 use AndreasWolf\TestExtension\TestSystemBuilder;
 use Psr\Container\ContainerInterface;
 use TYPO3\CMS\Core\Package\Package;
@@ -35,7 +36,11 @@ final class ComposerizedSystemTest extends FunctionalTestCase
         putenv('TYPO3_PATH_ROOT=' . $this->instancePath);
         putenv('TYPO3_PATH_APP=' . $this->instancePath);
 
-        $testbase = new Testbase();
+        if ($this->composerFile) {
+            $testbase = new ComposerizedTestbase();
+        } else {
+            $testbase = new Testbase();
+        }
         $testbase->setTypo3TestingContext();
 
         // See if we're the first test of this test case.
